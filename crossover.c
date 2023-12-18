@@ -1,10 +1,6 @@
 #include "crossover.h"
 #include "GA.h"
 
-// int cmpFitness(const void *a, const void *b) {
-//   return (((ANSWER_T *)a)->fitness - ((ANSWER_T *)b)->fitness);
-// }
-
 void gameEngine(char *problem, ANSWER_T *userguess) {
   userguess->black = 0;
   userguess->white = 0;
@@ -176,43 +172,6 @@ void PropotionalRouletteWheelSelection(ANSWER_T *populations, char *parentA,
     }
   }
 }
-
-// void RankingSelection(ANSWER_T *populations, char *parentA, char *parentB) {
-//   // Sort the population based on fitness (ascending order)
-//   qsort(populations, POPULATION_SIZE, sizeof(ANSWER_T), cmpFitness);
-
-//   // Calculate the selection probabilities based on rank
-//   double totalProbability = 0.0;
-//   for (int i = 0; i < POPULATION_SIZE; ++i) {
-//     totalProbability += (double)(i + 1) / POPULATION_SIZE;
-//   }
-
-//   // Generate random values for selection
-//   double randomValue1 = (double)rand() / RAND_MAX * totalProbability;
-//   double randomValue2 = (double)rand() / RAND_MAX * totalProbability;
-
-//   // Perform the first selection
-//   double partialSum = 0.0;
-//   int parentIndex1 = 0;
-//   for (int i = 0; i < POPULATION_SIZE; ++i) {
-//     partialSum += (double)(i + 1) / POPULATION_SIZE;
-//     if (partialSum >= randomValue1) {
-//       parentIndex1 = i;
-//       break;
-//     }
-//   }
-
-//   // Perform the second selection
-//   partialSum = 0.0;
-//   int parentIndex2 = 0;
-//   for (int i = 0; i < POPULATION_SIZE; ++i) {
-//     partialSum += (double)(i + 1) / POPULATION_SIZE;
-//     if (partialSum >= randomValue2) {
-//       parentIndex2 = i;
-//       break;
-//     }
-//   }
-// }
 
 void crossingOver(char *parentA, char *parentB) {
   int rate = rand() % 100;

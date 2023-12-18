@@ -1,8 +1,8 @@
 #ifndef GA_H
 #define GA_H
 
-#define TESTRUN 100
-#define GAME_TYPE 2
+#define TESTRUN 2000
+#define GAME_TYPE 1
 // Problem: Mastermind (P=4, N=6) and (P=5, N=8)
 // GAME_TYPE 1 = (P=4, N=6) and 2 = (P=5, N=8)
 

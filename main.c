@@ -70,7 +70,7 @@ int main(void) {
 
         for (int pairing = 0; pairing < POPULATION_SIZE / 2; pairing++) {
           if (generation > 5 && eHatElemNum == 0) {
-            for (int genPop = POPULATION_SIZE / 3; genPop < POPULATION_SIZE;
+            for (int genPop = POPULATION_SIZE / 2; genPop < POPULATION_SIZE;
                  genPop++) {
               generateRandomGuess(population[genPop].ans);
               population[genPop].black = 0;
@@ -83,7 +83,7 @@ int main(void) {
                 calculateNewFitness(round, hallOfFame, population[runner]);
           }
 
-          PropotionalRouletteWheelSelection(population, tempParentA,
+          TournamentSelection(population, tempParentA,
                                             tempParentB);
           int isAlreadyExistsA = 1;
           int isAlreadyExistsB = 1;
