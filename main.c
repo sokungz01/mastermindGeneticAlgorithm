@@ -23,7 +23,9 @@ int main(void) {
   memset(frequency, 0, sizeof(frequency));
   float avgRun = 0;
   int winCount = 0;
+  clock_t rawTime;
   for (int i = 0; i < TESTRUN; i++) {
+    rawTime = clock();
     ANSWER_T guess;
     char problem[NUM_PROBLEM + 1];
     char initalGuess[NUM_PROBLEM + 1] = INITIAL_GUESS;
@@ -82,9 +84,9 @@ int main(void) {
             population[runner].fitness =
                 calculateNewFitness(round, hallOfFame, population[runner]);
           }
-
-          TournamentSelection(population, tempParentA,
-                                            tempParentB);
+          TournamentSelection(population, tempParentA, tempParentB);
+          // PropotionalRouletteWheelSelection(population, tempParentA,
+          //                                   tempParentB);
           int isAlreadyExistsA = 1;
           int isAlreadyExistsB = 1;
           while (isAlreadyExistsA == 1 || isAlreadyExistsB == 1) {
@@ -153,7 +155,8 @@ int main(void) {
       printf("Round %-4d | Guess : %-6s | B: %-2d | W:%-2d | eHat : %d\n",
              round, guess.ans, guess.black, guess.white, eHatElemNum);
     }
-
+    rawTime = clock() - rawTime;
+    printf("TimeTaken : %.3lf ms\n", (((double)rawTime) / CLOCKS_PER_SEC)*1000);
     printf("---------------------------------------------\n");
     if (round <= MAX_ATTEMPTS && guess.black == NUM_PROBLEM) {
       winCount++;
