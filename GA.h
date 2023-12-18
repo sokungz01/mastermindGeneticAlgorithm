@@ -1,8 +1,8 @@
 #ifndef GA_H
 #define GA_H
 
-#define TESTRUN 2000
-#define GAME_TYPE 1
+#define TESTRUN 1000
+#define GAME_TYPE 2
 // Problem: Mastermind (P=4, N=6) and (P=5, N=8)
 // GAME_TYPE 1 = (P=4, N=6) and 2 = (P=5, N=8)
 
@@ -20,10 +20,10 @@
 
 // Hyperparameter for GA
 
-#define TOURNAMENTSIZE 10
+#define TOURNAMENTSIZE 5
 #define CROSSOVER_RATE 50
-#define MUTATION_RATE 5
-#define PERMUTATION_RATE 2
+#define MUTATION_RATE 12
+#define PERMUTATION_RATE 3
 #define INVERSION_RATE 3
 
 #define EHAT_POPULATION_SIZE 40
