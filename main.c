@@ -12,7 +12,7 @@ int cmpFitness(const void *a, const void *b) {
   return (((ANSWER_T *)a)->fitness - ((ANSWER_T *)b)->fitness);
 }
 void dataLogger(const char *fileName, int minRound, int maxRound, int winCount,
-                int *frequency, double avgRun, time_t t);
+                int *frequency, double avgRun, time_t t, double sumTime);
 
 int main(void) {
   time_t t = time(NULL);
@@ -24,6 +24,9 @@ int main(void) {
   float avgRun = 0;
   int winCount = 0;
   clock_t rawTime;
+  double sumTime = 0;
+  double timeTaken = 0;
+  clock_t rawtime;
   for (int i = 0; i < TESTRUN; i++) {
     rawTime = clock();
     ANSWER_T guess;
@@ -87,6 +90,7 @@ int main(void) {
           TournamentSelection(population, tempParentA, tempParentB);
           // PropotionalRouletteWheelSelection(population, tempParentA,
           //                                   tempParentB);
+
           int isAlreadyExistsA = 1;
           int isAlreadyExistsB = 1;
           while (isAlreadyExistsA == 1 || isAlreadyExistsB == 1) {
@@ -156,7 +160,9 @@ int main(void) {
              round, guess.ans, guess.black, guess.white, eHatElemNum);
     }
     rawTime = clock() - rawTime;
-    printf("TimeTaken : %.3lf ms\n", (((double)rawTime) / CLOCKS_PER_SEC)*1000);
+    timeTaken = (((double)rawTime) / CLOCKS_PER_SEC) * 1000;
+    sumTime += timeTaken;
+    printf("TimeTaken : %.3lf ms\n", timeTaken);
     printf("---------------------------------------------\n");
     if (round <= MAX_ATTEMPTS && guess.black == NUM_PROBLEM) {
       winCount++;
@@ -170,12 +176,12 @@ int main(void) {
     }
     frequency[round - 1]++;
   }
-  dataLogger("result.txt", minRound, maxRound, winCount, frequency, avgRun, t);
+  dataLogger("result.txt", minRound, maxRound, winCount, frequency, avgRun, t,sumTime);
   return 0;
 }
 
 void dataLogger(const char *fileName, int minRound, int maxRound, int winCount,
-                int *frequency, double avgRun, time_t t) {
+                int *frequency, double avgRun, time_t t, double sumTime) {
   struct tm tm = *localtime(&t);
   printf("TEST DATE : %d-%02d-%02d | TIME : %02d:%02d:%02d\n",
          tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, (tm.tm_hour + 7) % 24,
@@ -189,9 +195,10 @@ void dataLogger(const char *fileName, int minRound, int maxRound, int winCount,
   printf("Min Round : %d\n", minRound);
   printf("Max Round : %d\n", maxRound);
   printf("Average Round : %g\n", avgRun / TESTRUN);
+  printf("Average time : %.3lf ms🗿🦍\n", sumTime / TESTRUN);
   printf("Winrate : %.2f%%\n", (((double)winCount) / TESTRUN) * 100);
 
-  printf("\n|Round : Frequency|\n");
+ printf("\n|Round : Frequency|\n");
   for (int i = 0; i < MAX_ATTEMPTS; i++) {
     if (frequency[i] != 0) {
       printf("| %-4d : %-4d |\n", i + 1, frequency[i]);

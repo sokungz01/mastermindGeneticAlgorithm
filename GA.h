@@ -1,8 +1,8 @@
 #ifndef GA_H
 #define GA_H
 
-#define TESTRUN 1
-#define GAME_TYPE 2
+#define TESTRUN 1000
+#define GAME_TYPE 1
 // Problem: Mastermind (P=4, N=6) and (P=5, N=8)
 // GAME_TYPE 1 = (P=4, N=6) and 2 = (P=5, N=8)
 
@@ -19,19 +19,18 @@
 #endif
 
 // Hyperparameter for GA
-#define TOURNAMENTSIZE 5
-#define CROSSOVER_RATE 100
-#define MUTATION_RATE 3
+#define TOURNAMENTSIZE 2
+#define CROSSOVER_RATE 10
+#define MUTATION_RATE 10
 #define PERMUTATION_RATE 2
 #define INVERSION_RATE 3
-#define EHAT_POPULATION_SIZE 40
-#define POPULATION_SIZE 50
+#define EHAT_POPULATION_SIZE 20
+#define ELITSM_POPULATION_RATE 0.3
+#define POPULATION_SIZE 30
 #define MAX_GENERATIONS 20
-#define ELITSM_POPULATION_RATE 0.2
 #define FITNESS_THRESHOLD 0.0000
 #define FITNESS_BLACK_VALUE 1.0
 #define FITNESS_WHITE_VALUE 1.0
-
 
 typedef struct {
   char ans[NUM_PROBLEM + 1];
