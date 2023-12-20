@@ -54,6 +54,10 @@ This project aims to apply a Genetic Algorithm to solve the Mastermind Game. The
 5. The fitness value converges to 0 is better
 
 ## Project Report📃
+[Mastermind_with_GA_report.pdf](Mastermind_with_GA_report.pdf)
+
+## Reference📜
+[Berghman et. al. (2009) Efficient solutions for Mastermind using genetic algorithms](https://www.researchgate.net/publication/265728382_Efficient_solutions_for_Mastermind_using_genetic_algorithms)
 
 ## Background🏫
 - This project is a part of the CPE231 Algorithm subject in Semester 1/2023
