@@ -1,9 +1,12 @@
 # Mastermind Game with Genetic Algorithm🕹️
-This project aims to apply a Genetic Algorithm to solve the Mastermind Game. The Mastermind Game in our study has 2 game modes: P (6,4) and P(8,5) in the limit of guesses of 10 and 12 turns, respectively.
+This project aims to apply a Genetic Algorithm to solve the Mastermind Game. The Mastermind Game in our study has 2 game modes: P(6,4) and P(8,5) in the limit of guesses of 10 and 12 turns, respectively.
 
 ## Objective🎯
 - To decrease the average round of guesses as much as possible
 - To decrease execution time usage
+
+## Best Result⭐
+### P(6,4): Pick 4 colors from 6 colors📍
 
 ## GA Method🌿
 ### Parent Selection 👨🏻‍👩🏻‍👧🏻‍👦🏻
@@ -24,7 +27,18 @@ This project aims to apply a Genetic Algorithm to solve the Mastermind Game. The
 #define EHAT_POPULATION_SIZE 20  
 #define POPULATION_SIZE 30  
 #define MAX_GENERATIONS 20  
-#define ELITSM_POPULATION_RATE 0.3000  
+#define ELITSM_POPULATION_RATE 0.3  
 #define FITNESS_THRESHOLD 0.0  
 #define FITNESS_BLACK_VALUE 1.0  
 #define FITNESS_WHITE_VALUE 1.0  
+
+## Note📝
+1. **CROSSOVER_RATE** is the ratio between single-point crossover and two-point crossover. Therefore MUTATION_RATE 10 means a 10% chance of using a single-point crossover and a 90% chance of using a two-point crossover (10/90)
+2. **PERMUTATION_RATE** is the chance of being mutated by the **"swap mutation"** method
+3. **ELITSM_POPULATION_RATE** is the rate of elitism from the eligible set
+4. The eligible set noted by **"EHAT"**
+5. The fitness value converges to 0 is better
+
+## Background🏫
+- This project is a part of the CPE231 Algorithm subject in Semester 1/2023
+- Department of Computer Engineering, King Mongkut's University of Technology Thonburi
