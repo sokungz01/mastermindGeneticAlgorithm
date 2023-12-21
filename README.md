@@ -62,3 +62,12 @@ This project aims to apply a Genetic Algorithm to solve the Mastermind Game. The
 ## Background🏫
 - This project is a part of the CPE231 Algorithm subject in Semester 1/2023
 - Department of Computer Engineering, King Mongkut's University of Technology Thonburi
+
+Members 
+| Student ID  | Name                     | Github |
+|-------------|--------------------------|--------|
+| 65070501039 | Pongpon Butseemart       |   [Pongpon00](https://github.com/Pongpon00)     |
+| 65070501055 | Sorrawit Udomwittayakrai |   [SorrawitUdom](https://github.com/SorrawitUdom)    |
+| 65070501069 | Kanitsorn Darunaitorn    |   [Dr804t](https://github.com/Dr804t)     |
+| 65070501083 | Panurut Sirinapaisan     |   [sokungz01](https://github.com/sokungz01)    |
+| 65070501092 | Park Saranunt            |   [Saranunt](https://github.com/Saranunt)     |
