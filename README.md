@@ -59,15 +59,6 @@ This project aims to apply a Genetic Algorithm to solve the Mastermind Game. The
 ## Reference 📜
 [Berghman et. al. (2009) Efficient solutions for Mastermind using genetic algorithms](https://www.researchgate.net/publication/265728382_Efficient_solutions_for_Mastermind_using_genetic_algorithms)
 
-## Contributors 🤝🏻
-| Student ID  | Name                     |
-|-------------|--------------------------|
-| 65070501039 | [Pongpon Butseemart](https://github.com/Pongpon00)       |
-| 65070501055 | [Sorrawit Udomwittayakrai](https://github.com/SorrawitUdom) |
-| 65070501082 | [Pattaranun Ayaprasitphol](https://github.com/efmuruk) |
-| 65070501083 | [Panurut Sirinapaisan](https://github.com/sokungz01)     |
-| 65070501088 | Sopida Keawjongkul       |
-
 ## Background 🏫
 - This project is a part of the CPE231 Algorithm subject in Semester 1/2023
 - Department of Computer Engineering, King Mongkut's University of Technology Thonburi
